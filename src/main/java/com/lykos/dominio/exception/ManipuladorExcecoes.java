@@ -1,4 +1,4 @@
-package com.lykos.exception;
+package com.lykos.dominio.exception;
 
 import java.util.stream.Collectors;
 
