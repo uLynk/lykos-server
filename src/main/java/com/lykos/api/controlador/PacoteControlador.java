@@ -4,9 +4,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
-import com.lykos.domain.dto.CriarPacoteDTO;
-import com.lykos.domain.dto.AtualizarPacoteDTO;
-import com.lykos.domain.entidade.Pacote;
+import com.lykos.api.dto.CriarPacoteDTO;
+import com.lykos.api.dto.AtualizarPacoteDTO;
+import com.lykos.dominio.entidade.Pacote;
 import com.lykos.domain.servico.PacoteServico;
 
 @RestController

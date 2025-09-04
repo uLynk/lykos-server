@@ -1,13 +1,13 @@
-package com.lykos.domain.servico;
+package com.lykos.aplicacao.servico;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lykos.domain.dto.CriarPacoteDTO;
-import com.lykos.domain.dto.AtualizarPacoteDTO;
-import com.lykos.domain.entidade.Pacote;
-import com.lykos.domain.repositorio.PacoteRepositorio;
-import com.lykos.exception.RegraNegocioException;
+import com.lykos.api.dto.CriarPacoteDTO;
+import com.lykos.api.dto.AtualizarPacoteDTO;
+import com.lykos.dominio.entidade.Pacote;
+import com.lykos.dominio.repositorio.PacoteRepositorio;
+importcom.lykos.dominio.exception.RegraNegocioException;
 
 import java.math.BigDecimal;
 
