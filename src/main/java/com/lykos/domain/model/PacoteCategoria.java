@@ -26,5 +26,11 @@ public class PacoteCategoria {
 @Embeddable
 class PacoteCategoriaId implements java.io.Serializable {
     private Long idPacote;
+    public Long getIdPacote() {
+        return idPacote;
+    }
     private Long idSubcategoria;
+    public Long getIdSubcategoria() {
+        return idSubcategoria;
+    }
 }

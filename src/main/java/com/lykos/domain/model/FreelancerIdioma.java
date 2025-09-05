@@ -31,5 +31,11 @@ public class FreelancerIdioma {
 @Embeddable
 class FreelancerIdiomaId implements java.io.Serializable {
     private Long idFreelancer;
+    public Long getIdFreelancer() {
+        return idFreelancer;
+    }
     private Long idIdioma;
+    public Long getIdIdioma() {
+        return idIdioma;
+    }
 }
