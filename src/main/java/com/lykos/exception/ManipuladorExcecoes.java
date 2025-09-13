@@ -4,9 +4,12 @@ import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import jakarta.persistence.OptimisticLockException;
 
 @ControllerAdvice
 public class ManipuladorExcecoes {
@@ -26,9 +29,14 @@ public class ManipuladorExcecoes {
         return ResponseEntity.badRequest().body(msg);
     }
 
+    @ExceptionHandler({OptimisticLockException.class, ObjectOptimisticLockingFailureException.class})
+    public ResponseEntity<String> trataOptimisticLock(Exception ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body("Conflito ao atualizar: o recurso foi alterado por outro usuário. Recarregue e tente novamente.");
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> trataGenerico(Exception ex) {
-        // Logar a exception aqui (omissão por brevidade)
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Erro interno no servidor");
     }
