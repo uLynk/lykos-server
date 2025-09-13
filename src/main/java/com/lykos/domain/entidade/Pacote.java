@@ -74,4 +74,9 @@ public class Pacote {
     public void setPreco(java.math.BigDecimal preco) { this.preco = preco; }
     public void setPrazoDias(Integer prazoDias) { this.prazoDias = prazoDias; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
+
+    public String getTitulo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTitulo'");
+    }
 }
